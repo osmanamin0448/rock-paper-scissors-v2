@@ -1,4 +1,4 @@
-function getComputerChoice(number){
+function getComputerChoice(){
   const computerChoice =  Math.floor(Math.random() * 3)
   if(computerChoice === 0){
     return "rock"
@@ -12,3 +12,8 @@ function getComputerChoice(number){
 }
 getComputerChoice()
 
+function getHumanChoice(){
+  const humanChoice = prompt("Enter your choice: ")
+  return humanChoice;
+}
+getHumanChoice();
