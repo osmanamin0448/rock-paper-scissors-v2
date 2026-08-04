@@ -25,6 +25,7 @@ let computerScore = 0;
 
 //Play only a round of the game
 function playRound(computerChoice, humanChoice){
+  //computer win scenarios
   if(humanChoice === "rock" && computerChoice ==="paper"){
     console.log("You lose! Paper beats Rock");
     computerScore++;
@@ -36,7 +37,23 @@ function playRound(computerChoice, humanChoice){
   else if(humanChoice === "scissor" && computerChoice === "rock"){
     console.log("You lose! Rock beats Scissors")
     computerScore++;
-  }   
-}
+  }
 
+  //Human win scenarios
+  else if(computerChoice === "rock" && humanChoice === "paper"){
+    console.log("You win! Paper beats Rock")
+    computerScore++
+  }
+  else if(computerChoice === "paper" && humanChoice === "scissors"){
+    console.log("You win! Scissors beats Paper")
+  }
+  else if(computerChoice === "scissors" && humanChoice === "rock"){
+    console.log("You win! Rock beats scissors")
+  }
+
+  //Draw scenarios
+  else {
+    console.log("Its a tie!")
+  }
+}
 playRound(getComputerChoice(), getHumanChoice());
