@@ -10,10 +10,28 @@ function getComputerChoice(){
     return "scissors"
   }
 }
-getComputerChoice()
 
 function getHumanChoice(){
   const humanChoice = prompt("Enter your choice: ")
-  return humanChoice;
+  return humanChoice.toLowerCase();
 }
-getHumanChoice();
+
+let humanScore = 0;
+let computerScore = 0;
+
+function playRound(computerChoice, humanChoice){
+  if(humanChoice === "rock" && computerChoice ==="paper"){
+    console.log("You lose! Paper beats Rock");
+    computerScore++;
+  }
+  else if(humanChoice === "paper" && computerChoice === "scissors"){
+    console.log("You lose! Scissors beats Paper")
+    computerScore++;
+  }
+  else if(humanChoice === "scissor" && computerChoice === "rock"){
+    console.log("You lose! Rock beats Scissors")
+    computerScore++;
+  }   
+}
+
+playRound(getComputerChoice(), getHumanChoice());
