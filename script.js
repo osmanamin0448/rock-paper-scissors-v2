@@ -1,5 +1,5 @@
 function getComputerChoice(number){
-  computerChoice =  Math.floor(Math.random() * number)
+  const computerChoice =  Math.floor(Math.random() * 3)
   if(computerChoice === 0){
     return "rock"
   }
@@ -10,4 +10,5 @@ function getComputerChoice(number){
     return "scissors"
   }
 }
-getComputerChoice(3)
+getComputerChoice()
+
