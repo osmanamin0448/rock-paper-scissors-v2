@@ -18,42 +18,65 @@ function getHumanChoice(){
   return humanChoice.toLowerCase();
 }
 
-// Update human and computer Score
-let humanScore = 0;
-let computerScore = 0;
+function PlayGame(){
+  // Update human and computer Score
+  let humanScore = 0;
+  let computerScore = 0;
 
+  //Play only a round of the game
+  function playRound(computerChoice, humanChoice){
+    //computer win scenarios
+    if(humanChoice === "rock" && computerChoice ==="paper"){
+      console.log("You lose! Paper beats Rock");
+      computerScore++;
+    }
+    else if(humanChoice === "paper" && computerChoice === "scissors"){
+      console.log("You lose! Scissors beats Paper")
+      computerScore++;
+    }
+    else if(humanChoice === "scissor" && computerChoice === "rock"){
+      console.log("You lose! Rock beats Scissors")
+      computerScore++;
+    }
 
-//Play only a round of the game
-function playRound(computerChoice, humanChoice){
-  //computer win scenarios
-  if(humanChoice === "rock" && computerChoice ==="paper"){
-    console.log("You lose! Paper beats Rock");
-    computerScore++;
-  }
-  else if(humanChoice === "paper" && computerChoice === "scissors"){
-    console.log("You lose! Scissors beats Paper")
-    computerScore++;
-  }
-  else if(humanChoice === "scissor" && computerChoice === "rock"){
-    console.log("You lose! Rock beats Scissors")
-    computerScore++;
-  }
+    //Human win scenarios
+    else if(computerChoice === "rock" && humanChoice === "paper"){
+      console.log("You win! Paper beats Rock")
+      humanScore++
+    }
+    else if(computerChoice === "paper" && humanChoice === "scissors"){
+      console.log("You win! Scissors beats Paper")
+      humanScore++
+    }
+    else if(computerChoice === "scissors" && humanChoice === "rock"){
+      console.log("You win! Rock beats scissors")
+      humanScore++
+    }
 
-  //Human win scenarios
-  else if(computerChoice === "rock" && humanChoice === "paper"){
-    console.log("You win! Paper beats Rock")
-    computerScore++
+    //Draw scenarios
+    else {
+      console.log(`Its a tie!. Human choice:${humanChoice} and computer choice:${computerChoice}`)
+    }
   }
-  else if(computerChoice === "paper" && humanChoice === "scissors"){
-    console.log("You win! Scissors beats Paper")
-  }
-  else if(computerChoice === "scissors" && humanChoice === "rock"){
-    console.log("You win! Rock beats scissors")
-  }
+  
+  //Play 5 rounds
+  for (i = 1; i <= 5; i++){
+    playRound(getComputerChoice(), getHumanChoice());
+  } 
 
-  //Draw scenarios
-  else {
-    console.log("Its a tie!")
+  //Update human and computer Score
+  console.log(`Human score: ${humanScore}`);
+  console.log(`Computer score: ${computerScore}`);
+
+  //Declare the final result
+  if(humanScore > computerScore){
+    console.log(`Final results: human won the game with ${humanScore} wins`);
+  }else if(computerScore > humanScore){
+    console.log(`Final results: computer won with ${computerScore} wins`)
+  }else{
+    console.log(`The game is a tie both had human score:${humanScore} and computer score:${computerScore}`)
   }
 }
-playRound(getComputerChoice(), getHumanChoice());
+
+PlayGame()
+
