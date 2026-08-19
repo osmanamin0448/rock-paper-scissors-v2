@@ -9,6 +9,7 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
 .container button{
@@ -29,4 +30,12 @@ body{
 .container #scissors{
   background-color: green;
   border: none;
+}
+
+.info{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  gap: 10px;
 }

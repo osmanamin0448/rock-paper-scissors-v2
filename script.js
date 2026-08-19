@@ -28,57 +28,64 @@ scissors.addEventListener("click", () => {
   playGame(getComputerChoice(), "scissors")
 })
 
-let humanScore = 0;
-let computerScore = 0;
+
+
+let result = document.querySelector('#result');
+let humanScoreResult = document.querySelector("#human-score");
+let computerScoreResult = document.querySelector("#computer-score");
+let finalResult = document.querySelector("#final-result")
+
+humanScore = 0;
+computerScore = 0;
 
 //Play the game
 function playGame(computerChoice, humanChoice){
 
   //computer win scenarios
   if(humanChoice === "rock" && computerChoice ==="paper"){
-    console.log("You lose! Paper beats Rock");
+    result.textContent = "You lose! Paper beats Rock";
     computerScore++;
   }
   else if(humanChoice === "paper" && computerChoice === "scissors"){
-    console.log("You lose! Scissors beats Paper")
+    result.textContent = "You lose! Scissors beats Paper";
     computerScore++;
   }
   else if(humanChoice === "scissors" && computerChoice === "rock"){
-    console.log("You lose! Rock beats Scissors")
+    result.textContent = "You lose! Rock beats Scissors";
     computerScore++;
   }
 
   //Human win scenarios
   else if(computerChoice === "rock" && humanChoice === "paper"){
-    console.log("You win! Paper beats Rock")
+    result.textContent = "You win! Paper beats Rock";
     humanScore++
   }
   else if(computerChoice === "paper" && humanChoice === "scissors"){
-    console.log("You win! Scissors beats Paper")
+    result.textContent = "You win! Scissors beats Paper";
     humanScore++
   }
   else if(computerChoice === "scissors" && humanChoice === "rock"){
-    console.log("You win! Rock beats scissors")
+    result.textContent = "You win! Rock beats scissors";
     humanScore++
   }
 
   //Draw scenarios
   else {
-    console.log(`Its a tie!. Human choice:${humanChoice} and computer choice:${computerChoice}`)
+    result.textContent = `Its a tie! Human choice:${humanChoice} and computer choice:${computerChoice}`
   }
 
   //Update human and computer Score
-  console.log(`Human score: ${humanScore}`);
-  console.log(`Computer score: ${computerScore}`);
+  humanScoreResult.textContent = `Player's Score: ${humanScore}`;
+  computerScoreResult.textContent = `Computer's score: ${computerScore}`;
 
   //Declare the final result
   if(humanScore === 5){
-    console.log(`Final results: human won the game with ${humanScore} wins`);
+    finalResult.textContent = `Final results: human won the game with ${humanScore} wins`;
     humanScore = 0;
     computerScore = 0;
   }
   else if(computerScore === 5){
-    console.log(`Final results: computer won with ${computerScore} wins`)
+    finalResult.textContent = `Final results: computer won with ${computerScore} wins`;
     humanScore = 0;
     computerScore = 0;
   }
