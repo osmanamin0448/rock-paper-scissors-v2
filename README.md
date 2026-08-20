@@ -13,9 +13,11 @@ The project focuses on practicing JavaScript fundamentals, including:
 * Parameters and arguments
 * Variables and scope
 * Conditional statements
+* Document Object Models(DOM)
+* Element Selectors
 * `Math.random()`
-* `prompt()`
-* `console.log()`
+* `eventListener()`
+* ``
 * Function return values
 * String methods
 * Basic game logic
@@ -27,12 +29,12 @@ The project focuses on practicing JavaScript fundamentals, including:
 ## How the Game Works
 
 1. The computer randomly chooses **Rock**, **Paper**, or **Scissors**.
-2. The player enters their choice using `prompt()`.
+2. The player select their choice using designated button.
 3. The game compares the player's choice with the computer's choice.
-4. The winner of each round is announced in the browser console.
+4. The winner of each round is announced.
 5. The winner's score is incremented.
-6. The game plays **5 rounds**.
-7. At the end of the five rounds, the final winner is announced.
+6. The game plays till one player reacher 5 wins.
+7. At the end, the final winner is announced.
 
 ## Project Structure
 
@@ -63,13 +65,7 @@ cd rock-paper-scissors-v2
 
 Open `index.html` in your browser.
 
-The game uses the browser's developer console to display the game results.
-
-Open the console using:
-
-```text
-Right-click → Inspect → Console
-```
+Choose your option by clicking on any of the three button in the index.html
 
 ## Game Rules
 
@@ -85,7 +81,7 @@ Through this project, I practiced writing JavaScript functions and organizing pr
 I also learned how to:
 
 * Generate random values using `Math.random()`
-* Get user input with `prompt()`
+* Get user input with the designated buttons
 * Pass values into functions using parameters
 * Return values from functions
 * Track changing values using variables
@@ -93,17 +89,3 @@ I also learned how to:
 * Use function scope to organize game state
 * Build a multi-round game using functions
 
-## Future Improvements
-
-Possible improvements for a future version include:
-
-* Add a graphical user interface (GUI)
-* Add buttons instead of using `prompt()`
-* Display scores on the webpage
-* Add a reset/restart button
-* Improve input validation
-* Add animations and styling
-
-## Acknowledgements
-
-This project was completed as part of **The Odin Project** foundation curriculum.
