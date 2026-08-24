@@ -24,7 +24,7 @@ The project focuses on practicing JavaScript fundamentals, including:
 * Tracking scores
 
 ## Live Demo
-<https://osmanamin0448.github.io/rock-paper-scissors-v2/>
+<https://osmanamin0448.github.io/rock-paper-scissors/>
 
 ## How the Game Works
 
@@ -50,7 +50,7 @@ rock-paper-scissors/
 ### 1. Clone the repository
 
 ```bash
-git clone <git@github.com:osmanamin0448/rock-paper-scissors-v2.git>
+git clone <git@github.com:osmanamin0448/rock-paper-scissors.git>
 ```
 
 ### 2. Open the project
